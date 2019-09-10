@@ -1,6 +1,7 @@
 public class Clinic extends BaseClinic{
-    public Clinic(TriageType triageType){
-        this.triageType = triageType;
+    public Clinic(TriageType DoctortriageType, TriageType radiologyTriageType){
+        this.doctorTriageType = DoctortriageType;
+        this.radiologyTriageType = radiologyTriageType;
     }
 
     public void triagePatient(String name, int gravity, VisibleSymptoms visibleSymptoms){
@@ -8,7 +9,7 @@ public class Clinic extends BaseClinic{
     }
 
     public void triagePatient(Client newClient){
-        if(triageType == TriageType.GRAVITY && newClient.getGravity() > 5)
+        if(doctorTriageType == TriageType.GRAVITY && newClient.getGravity() > 5)
         {
             lstDoctorTriage.add(0, newClient);
         }
@@ -16,10 +17,16 @@ public class Clinic extends BaseClinic{
             lstDoctorTriage.add(newClient);
         }
 
-
         if (newClient.getVisibleSymptoms() == VisibleSymptoms.BROKEN_BONE || newClient.getVisibleSymptoms() == VisibleSymptoms.SPRAIN)
         {
-            lstRadiologyTriage.add(newClient);
+            if(radiologyTriageType == TriageType.GRAVITY && newClient.getGravity() > 5)
+            {
+                lstRadiologyTriage.add(0, newClient);
+            }
+            else{
+                lstRadiologyTriage.add(newClient);
+            }
+
         }
     }
 }

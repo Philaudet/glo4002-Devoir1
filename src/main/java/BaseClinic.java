@@ -6,7 +6,8 @@ public abstract class BaseClinic {
     protected List<Client> lstDoctorTriage = new ArrayList();
     protected List<Client> lstRadiologyTriage = new ArrayList();
 
-    protected TriageType triageType;
+    protected TriageType doctorTriageType;
+    protected TriageType radiologyTriageType;
 
     public abstract void triagePatient(String name, int gravity, Clinic.VisibleSymptoms visibleSymptoms);
     public abstract void triagePatient(Client newClient);
