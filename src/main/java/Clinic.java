@@ -3,11 +3,11 @@ import java.util.List;
 
 public class Clinic {
 
-    protected List<Client> lstDoctorTriage = new ArrayList();
-    protected List<Client> lstRadiologyTriage = new ArrayList();
+    private List<Client> lstDoctorTriage = new ArrayList();
+    private List<Client> lstRadiologyTriage = new ArrayList();
 
-    protected TriageType doctorTriageType;
-    protected TriageType radiologyTriageType;
+    private TriageType doctorTriageType;
+    private TriageType radiologyTriageType;
 
     public Clinic(TriageType DoctortriageType, TriageType radiologyTriageType){
         this.doctorTriageType = DoctortriageType;
@@ -75,6 +75,10 @@ public class Clinic {
         else{
             return null;
         }
+    }
+
+    public boolean isClientInDoctorLine(Client client){
+        return !(lstDoctorTriage.indexOf(client) == -1);
     }
 
     public boolean isClientInRadiologyLine(Client client){

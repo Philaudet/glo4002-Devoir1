@@ -171,7 +171,7 @@ public class testClinic {
 
         clinic.triagePatient(client);
 
-        Assertions.assertNull(clinic.popFirstClientInDoctorLine());
+        Assertions.assertFalse(clinic.isClientInDoctorLine(client));
     }
 
     @Test
