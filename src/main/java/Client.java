@@ -1,13 +1,18 @@
 public class Client {
-    public Client(String name, int gravity, Clinic.VisibleSymptoms visibleSymptoms){
+    public Client(String name, int gravity, VisibleSymptoms visibleSymptoms){
         this.name = name;
         this.gravity = gravity;
         this.visibleSymptoms = visibleSymptoms;
     }
 
+    public Client(String name, int gravity){
+        this.name = name;
+        this.gravity = gravity;
+    }
+
     private String name;
     private int gravity;
-    private BaseClinic.VisibleSymptoms visibleSymptoms;
+    private VisibleSymptoms visibleSymptoms;
 
     //region Accessors
     public String getName(){
@@ -16,7 +21,7 @@ public class Client {
     public int getGravity(){
         return gravity;
     }
-    public Clinic.VisibleSymptoms getVisibleSymptoms() {
+    public VisibleSymptoms getVisibleSymptoms() {
         return visibleSymptoms;
     }
 
