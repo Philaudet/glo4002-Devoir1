@@ -6,6 +6,8 @@ public abstract class BaseClinic {
     protected List<Client> lstDoctorTriage = new ArrayList();
     protected List<Client> lstRadiologyTriage = new ArrayList();
 
+    protected TriageType triageType;
+
     public abstract void triagePatient(String name, int gravity, Clinic.VisibleSymptoms visibleSymptoms);
     public abstract void triagePatient(Client newClient);
 
@@ -47,5 +49,20 @@ public abstract class BaseClinic {
 
     public boolean isClientInRadiologyLine(Client client){
         return !(lstRadiologyTriage.indexOf(client) == -1);
+    }
+
+    public enum TriageType{
+        FIFO,
+        GRAVITY
+    }
+
+    public enum VisibleSymptoms{
+        COLD,
+        FLU,
+        EBOLA,
+        BROKEN_BONE,
+        CHEST_PAIN,
+        MIGRAINE,
+        SPRAIN
     }
 }

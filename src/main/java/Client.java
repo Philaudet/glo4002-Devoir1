@@ -7,7 +7,7 @@ public class Client {
 
     private String name;
     private int gravity;
-    private Clinic.VisibleSymptoms visibleSymptoms;
+    private BaseClinic.VisibleSymptoms visibleSymptoms;
 
     //region Accessors
     public String getName(){
